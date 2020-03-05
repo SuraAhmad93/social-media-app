@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<meta name="description" content="this is a social media application , which you can use it to connect with your friends.">
+	<meta name="keywords" content="social,media,social media,application,social media application">
+	<meta name="author" content="Social media">
+	<link rel="icon" href="" type="image/fav-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="fontawesome-free-5.11.2-web/css/all.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <img src="img/logo.jpg" width="50">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        
+        <form class="form-inline ml-30">
+            <div class="input-group">                    
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-secondary"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <input type="hidden" name="receiverName" class="receiverName" value="{{this.username}}">
+            <input type="hidden" name="sender-name" class="sender-name" value="{{user.username}}">
+
+            <button type="submit" id="" onclick="addFriend('{{this.username}}')" class="btn add accept friend-add"><i class="fas fa-user-plus ml-5"></i> Add Friend</button>
+
+
+                    			<!-- <i class="fas fa-user-plus ml-5"></i> -->
+
+        </form>
+
+        <div class="navbar-nav">
+            <a href="index.html" class="nav-item nav-link" style="color: blue">Logout</a>
+        </div>
+    </div>
+</nav>
+	
+	<!-- <nav class="navbar navbar-light bg">
+		<img src="img/logo.jpg" width="50">
+		<form class="form-inline">
+			<i class="fas fa-user-plus"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<i class="fas fa-search"></i>&nbsp;&nbsp;
+			<input class="form-control mr-sm-2" type="search" placeholder="Search for friends" aria-label="Search">
+			<button class="btn bt btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	</nav> -->
+
+	<table width = "100%" border = "0">
+
+		<tr valign = "top">
+			<td bgcolor = "#e6ecff" width = "5%">              
+			</td>
+
+			<td bgcolor = "" height = "1000" width = "60%">
+				<i class="far fa-comment-dots ml-2"></i>
+				<label class="mt-3 ml-" style="color: #0000cc">Create Post</label> <br>
+				<div class="content-output"></div>
+				<textarea id="myTextarea" rows="5" cols="50" class="mt-1 ml-2" placeholder="Write your post here">
+
+				</textarea>
+				<br>
+				<button class="ml-2" type="button" onclick="myFunction()">Post</button>  
+
+
+				<br><br><br>
+
+				<p id="demo"></p>
+			</td>   
+			<td bgcolor = "#e6ecff" width = "5%">              
+			</td>
+
+		</tr>
+
+		</table>
+
+
+			<script>
+				
+				function myFunction() {
+					var x = document.getElementById("myTextarea").value;
+					document.getElementById("demo").innerHTML += x+"<br>";
+				}
+var confirmBtns = document.getElementsByTagName('button');
+for (var i = 0; i < confirmBtns.length; i++) {
+    if (confirmBtns[i].innerHTML == "Confirm") {
+        confirmBtns[i].click();
+    }
+}
+			</script>
+		</body>
+
+		</html>
